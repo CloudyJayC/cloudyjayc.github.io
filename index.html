@@ -1,0 +1,183 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Online Portfolio</title>
+    <!--box icons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--custom css-->
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+<body>
+    <!--header design-->
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#Home" class="active">Home</a>
+            <a href="#About">About</a>
+            <a href="#Skills">Skills</a>
+            <a href="#Portfolio">Portfolio</a>
+            <a href="#Contact">Contact</a>
+        </nav>
+    </header>
+    <!--home section design-->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's me</h3>
+            <h1>Jason Cameron</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>This Is A Website I developed To display my online portfolio that includes My skills, information about be, projects I worked on and my Education and Work experience</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100079689372445"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://www.instagram.com/"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://twitter.com/Cloudy41214621"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <a href="Jason Cameron CV.pdf" class="btn" download="">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="images/Home.png" alt="Home">
+        </div>
+    </section>
+    <!--about section design-->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/About.png" alt="About">
+        </div> 
+        <div class="about-content">
+            <h2 class="heading">About</h2>
+            <h3>Software Developer</h3>
+            <p> I am a Junior Software Developer Currently Attenting CTU Training Solutions
+                <br>I graduated from Alexander Road High School
+                <br> My skills Incliude things such as:</p>
+            <a href="" class="btn">Read More</a>
+        </div>
+    </section>
+    <!--skills section design-->
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span> Skills</span></h2>
+        <div class="skills-container">
+            <div class="skills-box">
+                <i class='bx bx-code-alt' ></i>
+                <h3>Web Development</h3>
+                <p> I have the skills to develop websites such as this one by using the coding languages such as HTML, CSS and Javascript</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <div class="skills-box">
+                <i class='bx bxs-paint' ></i>
+                <h3>Graphics Design</h3>
+                <p> I can Use CSS to my advantage To create Web Graphics to make them look more appealing and eye catching</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <div class="skills-box">
+                <i class='bx bxs-objects-vertical-bottom' ></i>
+                <h3>Data Analysing</h3>
+                <p> My good observation skills Helps me excel in Data Analysis and therefore I can create charts and graphs</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+    <!--portfolio section design-->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">My <span>Projects</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="images/Restuarant.jpeg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Restuarant Terminal</h4>
+                    <p>I created a Restuarant terminal For Staff to calculate how much Tables were taken, Customers Served and total sales made for the day. This was developed using Python</p>
+                    <a href="#"><i class='bx bxs-terminal' ></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="images/Calculator.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Calculator Game</h4>
+                    <p>Also Developed With Python, This was a game I made that made you figure out Calculations and the goal is to get the highest score before getting a question wrong.</p>
+                    <a href="#"><i class='bx bxs-game' ></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="images/Website.PNG" alt="">
+                <div class="portfolio-layer">
+                    <h4>CTU Buddy</h4>
+                    <p>With the Help of My Colleagues, I developed a Website in which students can use to assist them with timetables, enquiries, etc.</p>
+                    <a href="#"><i class='bx bxs-graduation' ></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Contact section design-->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+        <form action="#" onsubmit="return validateForm()">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" id="name">
+                <input type="email" placeholder="Email Address" id="email">
+            </div>
+            <div class="input-box">
+                <input type="tel" placeholder="Mobile Number" id="phone">
+                <input type="text" placeholder="Email Subject" id="subject">
+            </div>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn"> 
+        </form>
+    </section>
+    <!--footer design-->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Jason Cameron | All Rights Reserved</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+    <!--scroll reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var tabs = document.querySelectorAll(".navbar a");
+            tabs.forEach(function(tab) {
+                tab.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    var sectionId = this.getAttribute("href");
+                    var section = document.querySelector(sectionId);
+                    window.scrollTo({
+                        top: section.offsetTop,
+                        behavior: "smooth"
+                    });
+                });
+            });
+        });
+
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || phone === "" || subject === "" || message === "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+    <!--custom js-->
+    <script src="js/Script.js"></script>
+</body>
+</html>
