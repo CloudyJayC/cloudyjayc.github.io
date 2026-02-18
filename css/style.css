@@ -252,6 +252,294 @@ span{
     margin: 1rem 0 3rem;
 }
 
+/* ==================== SKILL TAGS ==================== */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 238, 255, 0.1);
+    color: var(--main-color);
+    border: 0.1rem solid var(--main-color);
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+body.light-mode .skill-tag {
+    background: rgba(0, 119, 255, 0.1);
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* ==================== ABOUT STATS ==================== */
+.about-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
+
+body.light-mode .about-stats {
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .stat-label {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* ==================== EXPERIENCE SECTION ==================== */
+.experience {
+    background: var(--second-bg-color);
+}
+
+.experience h2 {
+    margin-bottom: 3rem;
+}
+
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.experience-box {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border-left: 0.5rem solid var(--main-color);
+    transition: 0.3s ease;
+}
+
+.experience-box:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 238, 255, 0.2);
+}
+
+body.light-mode .experience-box {
+    background: #f9fafb;
+    border-left-color: var(--main-color);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+}
+
+.experience-header h3 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.exp-company {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+body.light-mode .exp-company {
+    background: var(--main-color);
+    color: white;
+}
+
+.exp-period {
+    font-size: 1.3rem;
+    color: var(--main-color);
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.exp-role {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+body.light-mode .exp-role {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.exp-details {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.exp-details li {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.exp-details li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: rgba(0, 238, 255, 0.15);
+    color: var(--main-color);
+    border-radius: 1.5rem;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+/* ==================== EDUCATION SECTION ==================== */
+.education-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2.5rem;
+}
+
+.education-item {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 0.1rem solid rgba(0, 238, 255, 0.2);
+    transition: 0.3s ease;
+}
+
+.education-item:hover {
+    border-color: var(--main-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 238, 255, 0.15);
+}
+
+body.light-mode .education-item {
+    background: #f9fafb;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.edu-header h4 {
+    font-size: 1.6rem;
+    margin: 0;
+    flex: 1;
+}
+
+.edu-year {
+    padding: 0.4rem 0.8rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+
+body.light-mode .edu-year {
+    background: var(--main-color);
+    color: white;
+}
+
+.education-item p,
+.education-item ul {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.5rem 0;
+}
+
+body.light-mode .education-item p,
+body.light-mode .education-item ul {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.education-item li {
+    margin-bottom: 0.8rem;
+    margin-left: 1.5rem;
+}
+
+/* ==================== LANGUAGES INFO ==================== */
+.languages-info {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: var(--bg-color);
+    border-radius: 1.5rem;
+    border: 0.1rem solid rgba(0, 238, 255, 0.2);
+}
+
+.languages-info h3 {
+    font-size: 2.2rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.languages-info p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .languages-info {
+    background: #f9fafb;
+}
+
+body.light-mode .languages-info p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .portfolio {
     background: var(--second-bg-color);
 }
@@ -507,11 +795,50 @@ body.light-mode .contact form textarea {
     .portfolio-container{
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .about-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .experience-container {
+        grid-template-columns: 1fr;
+    }
+
+    .education-container {
+        grid-template-columns: 1fr;
+    }
+
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .edu-year {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .skill-tags {
+        justify-content: flex-start;
+    }
+
+    .tech-tags {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 617px){
     .portfolio-container{
         grid-template-columns: 1fr;
+    }
+
+    .experience-header {
+        flex-wrap: wrap;
+    }
+
+    .exp-company {
+        margin-top: 0.5rem;
     }
 }
 
