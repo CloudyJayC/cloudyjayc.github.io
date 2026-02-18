@@ -17,6 +17,14 @@
     --main-color: #0ef;
 }
 
+/* ==================== LIGHT MODE VARIABLES ==================== */
+body.light-mode {
+    --bg-color: #f4f6f9;
+    --second-bg-color: #ffffff;
+    --text-color: #222;
+    --main-color: #0077ff;
+}
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -25,7 +33,7 @@ html {
 body {
     background: var(--bg-color) ;
     color: var(--text-color);
-
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 section{
@@ -44,6 +52,7 @@ section{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: background-color 0.3s ease;
 }
 
 .header.sticky{
@@ -73,6 +82,24 @@ section{
     font-size: 3.6rem;
     color: var(--text-color);
     display: none;
+}
+
+/* ==================== THEME TOGGLE ICON ==================== */
+#theme-toggle {
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+#theme-toggle:hover {
+    color: var(--main-color);
+    transform: scale(1.15);
+}
+
+/* Rotate animation */
+#theme-toggle.rotate {
+    transform: rotate(360deg);
 }
 
 .home{
@@ -243,9 +270,9 @@ span{
 .portfolio-container .portfolio-box{
     position: relative;
     border-radius: 2rem;
-     box-shadow: 0 0 1rem var(--bg-color);
-     overflow: hidden;
-     display: flex;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
 }
 
 .portfolio-box img{
@@ -328,6 +355,14 @@ span{
     background: var(--second-bg-color);
     border-radius: .8rem;
     margin: .7rem 0;
+    border: 0.1rem solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light mode form input borders */
+body.light-mode .contact form .input-box input,
+body.light-mode .contact form textarea {
+    border-color: #ddd;
 }
 
 
@@ -497,14 +532,5 @@ span{
 
     .about-img img{
         width: 90vw;
-    }
-
-    .footer {
-        flex-direction: column-reverse;
-    }
-
-    .footer p{
-        text-align: center;
-        margin-top: 2rem;
     }
 }

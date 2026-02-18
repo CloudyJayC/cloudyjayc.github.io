@@ -8,6 +8,35 @@ menuIcon.onclick = () => {
 };
 
 
+/*===================== light/dark mode toggle ===============*/
+const themeToggle = document.createElement('i');
+themeToggle.className = 'bx bx-moon';
+themeToggle.id = 'theme-toggle';
+document.querySelector('.header').appendChild(themeToggle);
+
+const body = document.body;
+
+// Load saved theme on page load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    body.classList.add('light-mode');
+    themeToggle.classList.replace('bx-moon', 'bx-sun');
+}
+
+// Toggle theme on click
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    const isLight = body.classList.contains('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+    // Animate icon
+    themeToggle.classList.add('rotate');
+    setTimeout(() => themeToggle.classList.remove('rotate'), 500);
+
+    // Swap icons
+    themeToggle.classList.replace(isLight ? 'bx-moon' : 'bx-sun', isLight ? 'bx-sun' : 'bx-moon');
+});
+
 
 /*================= scroll sections active link ===================*/
 let sections = document.querySelectorAll('section');
@@ -22,7 +51,7 @@ window.onscroll = () => {
         if(top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + ']').classList.add('active');
+                document.querySelector('header nav a[href*="#' + id + '"]').classList.add('active');
             });
         };
     });
