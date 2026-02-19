@@ -225,30 +225,33 @@
     <section class="portfolio" id="portfolio">
         <h2 class="heading">My <span>Projects</span></h2>
         <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="assets/images/Restuarant.jpeg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Restuarant Terminal</h4>
-                    <p>I created a Restuarant terminal For Staff to calculate how much Tables were taken, Customers Served and total sales made for the day. This was developed using Python</p>
-                    <a href="#"><i class='bx bxs-terminal' ></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="assets/images/Calculator.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Calculator Game</h4>
-                    <p>Also Developed With Python, This was a game I made that made you figure out Calculations and the goal is to get the highest score before getting a question wrong.</p>
-                    <a href="#"><i class='bx bxs-game' ></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="assets/images/Website.PNG" alt="">
-                <div class="portfolio-layer">
-                    <h4>CTU Buddy</h4>
-                    <p>With the help of my colleagues, I developed a website that assists students with timetables, enquiries, and more.</p>
-                    <a href="#"><i class='bx bxs-graduation' ></i></a>
-                </div>
-            </div>
+                                    <div class="portfolio-box">
+                                        <div class="portfolio-layer">
+                                            <h4>DocumentScannerAI</h4>
+                                            <p>AI-powered PDF document scanner and analyzer. Features secure PDF text extraction, keyword analysis, and named entity recognition using spaCy. Modular Python project for easy expansion.</p>
+                                            <div style="margin-bottom: 0.7rem;">
+                                                <span class="tech-tag">Python 3.12</span>
+                                                <span class="tech-tag">spaCy</span>
+                                                <span class="tech-tag">AI</span>
+                                                <span class="tech-tag">PDF</span>
+                                            </div>
+                                            <a href="https://github.com/CloudyJayC/DocumentScannerAI" target="_blank" title="View on GitHub"><i class='bx bxl-github'></i></a>
+                                        </div>
+                                    </div>
+                        <div class="portfolio-box">
+                            <div class="portfolio-layer">
+                                <h4>Municipality Management System</h4>
+                                <p>A modern ASP.NET Core 8.0 MVC web app for managing citizens, service requests, staff, and reports. Features responsive Bootstrap UI, SQL Server integration, and robust error handling.</p>
+                                <div style="margin-bottom: 0.7rem;">
+                                    <span class="tech-tag">ASP.NET Core 8.0</span>
+                                    <span class="tech-tag">MVC</span>
+                                    <span class="tech-tag">SQL Server</span>
+                                    <span class="tech-tag">Bootstrap 5</span>
+                                </div>
+                                <a href="https://github.com/CloudyJayC/MuncipalityManagementSystem" target="_blank" title="View on GitHub"><i class='bx bxl-github'></i></a>
+                            </div>
+                        </div>
+            <!-- Projects will be added here -->
         </div>
     </section>
     <!--Contact section design-->
@@ -270,7 +273,8 @@
     <!--footer design-->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2025 by Jason Cameron | All Rights Reserved</p>
+            <p>Copyright &copy; 2026 by Jason Cameron | All Rights Reserved</p>
+            <p style="font-size:1.2rem;opacity:0.7;">Last updated: February 2026</p>
         </div>
         <div class="footer-iconTop">
             <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
@@ -291,8 +295,26 @@
                         top: section.offsetTop,
                         behavior: "smooth"
                     });
+                    // Remove active from all, add to clicked
+                    tabs.forEach(function(t) { t.classList.remove('active'); });
+                    this.classList.add('active');
                 });
             });
+
+            // Fix for 'View Experience' button
+            var viewExpBtn = document.querySelector('.about-content .btn[href="#experience"]');
+            if(viewExpBtn) {
+                viewExpBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var expSection = document.querySelector('#experience');
+                    window.scrollTo({
+                        top: expSection.offsetTop,
+                        behavior: "smooth"
+                    });
+                    tabs.forEach(function(t) { t.classList.remove('active'); });
+                    document.querySelector('.navbar a[href="#experience"]').classList.add('active');
+                });
+            }
         });
 
         function validateForm() {
