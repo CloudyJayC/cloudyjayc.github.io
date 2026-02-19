@@ -12,15 +12,15 @@
 <body>
     <!--header design-->
     <header class="header">
-        <a href="#" class="logo">Portfolio</a>
+        <a href="#" class="logo">Jason<span class="logo-dev">.dev</span></a>
         <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
-            <a href="#Home" class="active">Home</a>
-            <a href="#About">About</a>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
             <a href="#experience">Experience</a>
-            <a href="#Skills">Skills</a>
-            <a href="#Portfolio">Portfolio</a>
-            <a href="#Contact">Contact</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
     <!--home section design-->
@@ -291,6 +291,7 @@
                     event.preventDefault();
                     var sectionId = this.getAttribute("href");
                     var section = document.querySelector(sectionId);
+                    if (typeof setScrollLock === 'function') setScrollLock();
                     window.scrollTo({
                         top: section.offsetTop,
                         behavior: "smooth"
@@ -307,6 +308,7 @@
                 viewExpBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     var expSection = document.querySelector('#experience');
+                    if (typeof setScrollLock === 'function') setScrollLock();
                     window.scrollTo({
                         top: expSection.offsetTop,
                         behavior: "smooth"
