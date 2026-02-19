@@ -202,7 +202,7 @@ body.light-mode .hamburger.open {
 }
 
 .home-img img{
-    width: 30vw;
+    width: 35vw;
     animation: floatImage 4s ease-in-out infinite;
 }
 
@@ -285,7 +285,7 @@ span{
 }
 
 .about-img img{
-    width: 25vw;
+    width: 30vw;
     border-radius: 2rem 2rem 2rem 2rem;
     border: 0.2rem solid var(--main-color);
     box-shadow: 0 0 1.5rem rgba(0, 238, 255, 0.25),
@@ -878,14 +878,15 @@ body.light-mode .contact form textarea {
 }
 
 @media (max-width: 768px){
-    /* Show the icon group, hide desktop nav */
+    /* Show the icon group */
     .header-icons {
         display: flex;
     }
 
-    /* Move theme toggle to desktop position when navbar is visible */
-    #theme-toggle {
-        font-size: 2.2rem;
+    /* Hide the theme toggle when it's a direct child of header on mobile
+       — on mobile it lives inside .header-icons instead */
+    .header > #theme-toggle {
+        display: none;
     }
 
     .hamburger {

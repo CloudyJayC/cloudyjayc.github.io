@@ -7,7 +7,6 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 };
 
-// Keyboard support for hamburger
 menuIcon.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -23,9 +22,26 @@ themeToggle.id = 'theme-toggle';
 themeToggle.setAttribute('aria-label', 'Toggle light/dark mode');
 themeToggle.setAttribute('role', 'button');
 themeToggle.setAttribute('tabindex', '0');
-// Append into header-icons group so it sits next to hamburger on mobile
-const headerIcons = document.querySelector('.header-icons');
-headerIcons.appendChild(themeToggle);
+
+// Append to header — on desktop sits inline after navbar, on mobile moves into header-icons
+document.querySelector('.header').appendChild(themeToggle);
+
+// On mobile, move it into the header-icons group so it sits next to the hamburger
+function placeThemeToggle() {
+    const headerIcons = document.querySelector('.header-icons');
+    if (window.innerWidth <= 768) {
+        if (!headerIcons.contains(themeToggle)) {
+            headerIcons.appendChild(themeToggle);
+        }
+    } else {
+        if (!document.querySelector('.header').contains(themeToggle) || headerIcons.contains(themeToggle)) {
+            document.querySelector('.header').appendChild(themeToggle);
+        }
+    }
+}
+
+placeThemeToggle();
+window.addEventListener('resize', placeThemeToggle);
 
 const body = document.body;
 
@@ -80,7 +96,7 @@ window.onscroll = () => {
                     links.classList.remove('active');
                     document.querySelector('header nav a[href="#' + id + '"]').classList.add('active');
                 });
-            };
+            }
         });
     }
 
@@ -88,7 +104,7 @@ window.onscroll = () => {
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
 
-    /*====================== close menu on scroll ==========*/
+    /*====================== close menu on scroll ===========*/
     menuIcon.classList.remove('open');
     navbar.classList.remove('active');
 };
