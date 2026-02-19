@@ -1,16 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Online Portfolio</title>
-    <!--box icons-->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!--custom css-->
+    <meta name="description" content="Jason Cameron — Junior Software Developer portfolio. Full-stack developer skilled in ASP.NET Core, Node.js, Python, and cloud technologies.">
+    <title>Jason Cameron | Junior Software Developer</title>
+
+    <!-- Preconnect to speed up font and icon loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Only load font weights actually used: 400, 600, 700 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- BoxIcons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!--header design-->
+    <!-- Header -->
     <header class="header">
         <a href="#" class="logo">Jason<span class="logo-dev">.dev</span></a>
         <div class="header-icons">
@@ -29,29 +39,30 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
-    <!--home section design-->
+
+    <!-- Home -->
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hello, It's me</h3>
             <h1>Jason Cameron</h1>
             <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>This is a website I developed to display my online portfolio. It includes my skills, information about me, projects I've worked on, and my education and work experience.</p>
+            <p>I'm a Junior Software Developer based in South Africa, passionate about building things that actually work and look good doing it. I enjoy solving problems, picking up new technologies, and turning ideas into real applications — this site is a bit of that in action.</p>
             <div class="social-media">
-                <a href="https://www.facebook.com/profile.php?id=100079689372445" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.instagram.com/cloudyjayc/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                <a href="https://github.com/CloudyJayC" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
                 <a href="https://www.linkedin.com/in/jason-cameron-69b080352/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
             </div>
-            <a href="assets/documents/Jason Cameron CV.pdf" class="btn" download="">Download CV</a>
+            <a href="assets/documents/Jason Cameron CV.pdf" class="btn" download>Download CV</a>
         </div>
         <div class="home-img">
-            <img src="assets/images/Home.png" alt="Home">
+            <img src="assets/images/Home.png" alt="Jason Cameron" loading="eager">
         </div>
     </section>
-    <!--about section design-->
+
+    <!-- About -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="assets/images/About.png" alt="About">
-        </div> 
+            <img src="assets/images/About.png" alt="Jason Cameron" loading="lazy">
+        </div>
         <div class="about-content">
             <h2 class="heading">About</h2>
             <h3>Junior Software Developer</h3>
@@ -73,7 +84,8 @@
             <a href="#experience" class="btn">View Experience</a>
         </div>
     </section>
-    <!--experience section design-->
+
+    <!-- Experience -->
     <section class="experience" id="experience">
         <h2 class="heading">My <span>Experience</span></h2>
         <div class="experience-container">
@@ -118,7 +130,8 @@
                 </div>
             </div>
         </div>
-        <h2 class="heading" style="margin-top: 4rem;">Education &amp; <span>Certifications</span></h2>
+
+        <h2 class="heading education-heading-gap">Education &amp; <span>Certifications</span></h2>
         <div class="education-container">
             <div class="education-item">
                 <div class="edu-header">
@@ -132,7 +145,7 @@
                     <h4>CTU Training Solutions</h4>
                     <span class="edu-year">2023 - 2025</span>
                 </div>
-                <ul style="margin-top: 0.8rem;">
+                <ul class="education-list-gap">
                     <li><strong>IT-Systems Development Certificate (NQF-4)</strong> – 2023 | Average: 83.5%</li>
                     <li><strong>IT-Database Development Certificate (NQF-5)</strong> – 2024 | Average: 84.9%</li>
                     <li><strong>IT-Cybersecurity Specialist Diploma (NQF-6)</strong> – 2025 | Average: 89.8%</li>
@@ -149,7 +162,8 @@
             </div>
         </div>
     </section>
-    <!--skills section design-->
+
+    <!-- Skills -->
     <section class="skills" id="skills">
         <h2 class="heading">My <span>Skills</span></h2>
         <div class="skills-container">
@@ -164,7 +178,7 @@
                     <span class="skill-tag">ASP.NET Core</span>
                     <span class="skill-tag">Node.js</span>
                 </div>
-            </div>          
+            </div>
             <div class="skills-box">
                 <i class='bx bxs-paint'></i>
                 <h3>UI/UX Design</h3>
@@ -175,7 +189,7 @@
                     <span class="skill-tag">Flexbox</span>
                     <span class="skill-tag">Razor Views</span>
                 </div>
-            </div>            
+            </div>
             <div class="skills-box">
                 <i class='bx bxs-data'></i>
                 <h3>Database Design</h3>
@@ -227,76 +241,78 @@
             <p><strong>English</strong> (Fluent) • <strong>Afrikaans</strong> (Basic) • <strong>Code 8 Driver's License</strong> (Valid)</p>
         </div>
     </section>
-    <!--portfolio section design-->
+
+    <!-- Portfolio -->
     <section class="portfolio" id="portfolio">
         <h2 class="heading">My <span>Projects</span></h2>
         <div class="portfolio-container">
-                                    <div class="portfolio-box">
-                                        <div class="portfolio-layer">
-                                            <h4>Document Scanner AI (WIP)</h4>
-                                            <p>AI-powered PDF document scanner and analyzer. Features secure PDF text extraction, keyword analysis, and named entity recognition using spaCy. Modular Python project for easy expansion.</p>
-                                            <div style="margin-bottom: 0.7rem;">
-                                                <span class="tech-tag">Python 3.12</span>
-                                                <span class="tech-tag">spaCy</span>
-                                                <span class="tech-tag">AI</span>
-                                                <span class="tech-tag">PDF</span>
-                                            </div>
-                                            <a href="https://github.com/CloudyJayC/DocumentScannerAI" target="_blank" rel="noopener noreferrer" title="View on GitHub"><i class='bx bxl-github'></i></a>
-                                        </div>
-                                    </div>
-                        <div class="portfolio-box">
-                            <div class="portfolio-layer">
-                                <h4>Municipality Management System</h4>
-                                <p>A modern ASP.NET Core 8.0 MVC web app for managing citizens, service requests, staff, and reports. Features responsive Bootstrap UI, SQL Server integration, and robust error handling.</p>
-                                <div style="margin-bottom: 0.7rem;">
-                                    <span class="tech-tag">ASP.NET Core 8.0</span>
-                                    <span class="tech-tag">MVC</span>
-                                    <span class="tech-tag">SQL Server</span>
-                                    <span class="tech-tag">Bootstrap 5</span>
-                                </div>
-                                <a href="https://github.com/CloudyJayC/MuncipalityManagementSystem" target="_blank" rel="noopener noreferrer" title="View on GitHub"><i class='bx bxl-github'></i></a>
-                            </div>
-                        </div>
-            <!-- Projects will be added here -->
+            <div class="portfolio-box">
+                <div class="portfolio-layer">
+                    <h4>Document Scanner AI (WIP)</h4>
+                    <p>AI-powered PDF document scanner and analyzer. Features secure PDF text extraction, keyword analysis, and named entity recognition using spaCy. Modular Python project for easy expansion.</p>
+                    <div class="portfolio-tags">
+                        <span class="tech-tag">Python 3.12</span>
+                        <span class="tech-tag">spaCy</span>
+                        <span class="tech-tag">AI</span>
+                        <span class="tech-tag">PDF</span>
+                    </div>
+                    <a href="https://github.com/CloudyJayC/DocumentScannerAI" target="_blank" rel="noopener noreferrer" aria-label="View DocumentScannerAI on GitHub"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <div class="portfolio-layer">
+                    <h4>Municipality Management System</h4>
+                    <p>A modern ASP.NET Core 8.0 MVC web app for managing citizens, service requests, staff, and reports. Features responsive Bootstrap UI, SQL Server integration, and robust error handling.</p>
+                    <div class="portfolio-tags">
+                        <span class="tech-tag">ASP.NET Core 8.0</span>
+                        <span class="tech-tag">MVC</span>
+                        <span class="tech-tag">SQL Server</span>
+                        <span class="tech-tag">Bootstrap 5</span>
+                    </div>
+                    <a href="https://github.com/CloudyJayC/MuncipalityManagementSystem" target="_blank" rel="noopener noreferrer" aria-label="View Municipality Management System on GitHub"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
         </div>
     </section>
-    <!--Contact section design-->
+
+    <!-- Contact -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-        <form action="https://formsubmit.co/jwcameron3@gmail.com" method="POST" onsubmit="return validateForm()" />
+        <form action="https://formsubmit.co/jwcameron3@gmail.com" method="POST" onsubmit="return validateForm()">
             <div class="input-box">
-                <input type="text" name="name" placeholder="Full Name" id="name">
-                <input type="email" name="email" placeholder="Email Address" id="email">
+                <input type="text" name="name" placeholder="Full Name" id="name" autocomplete="name">
+                <input type="email" name="email" placeholder="Email Address" id="email" autocomplete="email">
             </div>
             <div class="input-box">
-                <input type="tel" name="phone" placeholder="Mobile Number" id="phone">
+                <input type="tel" name="phone" placeholder="Mobile Number" id="phone" autocomplete="tel">
                 <input type="text" name="subject" placeholder="Email Subject" id="subject">
             </div>
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn"> 
+            <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
-    <!--footer design-->
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-text">
             <p>Copyright &copy; 2026 by Jason Cameron | All Rights Reserved</p>
-            <p style="font-size:1.2rem;opacity:0.7;">Last updated: February 2026</p>
+            <p class="footer-sub">Last updated: February 2026</p>
         </div>
         <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+            <a href="#home" aria-label="Back to top"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
-    <!--scroll reveal-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Scripts — deferred so they don't block rendering -->
+    <script src="https://unpkg.com/scrollreveal" defer></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var tabs = document.querySelectorAll(".navbar a");
             tabs.forEach(function(tab) {
                 tab.addEventListener("click", function(event) {
                     event.preventDefault();
-                    var sectionId = this.getAttribute("href");
-                    var section = document.querySelector(sectionId);
+                    var section = document.querySelector(this.getAttribute("href"));
                     if (typeof setScrollLock === 'function') setScrollLock();
                     window.scrollTo({ top: section.offsetTop, behavior: "smooth" });
                     tabs.forEach(function(t) { t.classList.remove('active'); });
@@ -305,12 +321,11 @@
             });
 
             var viewExpBtn = document.querySelector('.about-content .btn[href="#experience"]');
-            if(viewExpBtn) {
+            if (viewExpBtn) {
                 viewExpBtn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    var expSection = document.querySelector('#experience');
                     if (typeof setScrollLock === 'function') setScrollLock();
-                    window.scrollTo({ top: expSection.offsetTop, behavior: "smooth" });
+                    window.scrollTo({ top: document.querySelector('#experience').offsetTop, behavior: "smooth" });
                     tabs.forEach(function(t) { t.classList.remove('active'); });
                     document.querySelector('.navbar a[href="#experience"]').classList.add('active');
                 });
@@ -318,31 +333,23 @@
         });
 
         function validateForm() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var phone = document.getElementById("phone").value;
-            var subject = document.getElementById("subject").value;
-            var message = document.getElementById("message").value;
+            var name = document.getElementById("name").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var phone = document.getElementById("phone").value.trim();
+            var subject = document.getElementById("subject").value.trim();
+            var message = document.getElementById("message").value.trim();
 
-            if (name === "" || email === "" || phone === "" || subject === "" || message === "") {
+            if (!name || !email || !phone || !subject || !message) {
                 alert("Please fill in all fields");
                 return false;
             }
-
-            if (!validateEmail(email)) {
+            if (!/\S+@\S+\.\S+/.test(email)) {
                 alert("Please enter a valid email address");
                 return false;
             }
-
             return true;
         }
-
-        function validateEmail(email) {
-            var re = /\S+@\S+\.\S+/;
-            return re.test(email);
-        }
     </script>
-    <!--custom js-->
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

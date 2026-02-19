@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300,400,500,600,700,800,900&display=swap');
+/* ========================================
+   Jason Cameron — Portfolio Stylesheet
+   ======================================== */
 
 * {
     margin: 0;
@@ -204,6 +206,7 @@ body.light-mode .hamburger.open {
 .home-img img{
     width: 35vw;
     animation: floatImage 4s ease-in-out infinite;
+    will-change: transform;
 }
 
 @keyframes floatImage{
@@ -281,12 +284,11 @@ span{
     align-items: center;
     gap: 2rem;
     background: var(--second-bg-color);
-    border-bottom: none;
 }
 
 .about-img img{
     width: 30vw;
-    border-radius: 2rem 2rem 2rem 2rem;
+    border-radius: 2rem;
     border: 0.2rem solid var(--main-color);
     box-shadow: 0 0 1.5rem rgba(0, 238, 255, 0.25),
                 0 0 4rem rgba(0, 238, 255, 0.08),
@@ -441,7 +443,6 @@ body.light-mode .stat-label {
 /* ==================== EXPERIENCE SECTION ==================== */
 .experience {
     background: var(--bg-color);
-    border-bottom: none;
 }
 
 .experience h2 {
@@ -629,6 +630,12 @@ body.light-mode .education-item ul {
     margin-left: 1.5rem;
 }
 
+/* ==================== UTILITY / LAYOUT HELPERS ==================== */
+.education-heading-gap { margin-top: 4rem; }
+.education-list-gap    { margin-top: 0.8rem; }
+.portfolio-tags        { margin-bottom: 0.7rem; }
+.footer-sub            { font-size: 1.2rem; opacity: 0.7; }
+
 /* ==================== LANGUAGES INFO ==================== */
 .languages-info {
     text-align: center;
@@ -716,15 +723,6 @@ body.light-mode .languages-info p {
     }
 }
 
-.portfolio-box img{
-    width: 100%;
-    transition: .5s ease;
-}
-
-.portfolio-box:hover img{
-    transform: scale(1.1)
-}
-
 .portfolio-box .portfolio-layer {
     position: static;
     width: 100%;
@@ -738,10 +736,6 @@ body.light-mode .languages-info p {
     padding: 0;
     transform: none;
     transition: none;
-}
-
-.portfolio-box:hover .portfolio-layer {
-    /* No hover slide for text-only cards */
 }
 
 .portfolio-layer h4 {
