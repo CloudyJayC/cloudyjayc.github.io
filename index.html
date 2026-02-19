@@ -16,6 +16,9 @@
     <!-- BoxIcons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
+    <!-- Favicon — inline SVG data URI, no extra file needed -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f242d'/><text x='50' y='58' font-family='Poppins,sans-serif' font-size='42' font-weight='700' fill='%2300eeff' text-anchor='middle'>J</text><text x='72' y='72' font-family='Poppins,sans-serif' font-size='22' font-weight='600' fill='%23ffffff' text-anchor='middle'>.dev</text></svg>">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -46,12 +49,19 @@
             <h3>Hello, It's me</h3>
             <h1>Jason Cameron</h1>
             <h3>And I'm a <span class="multiple-text"></span></h3>
+            <div class="availability-badge">
+                <span class="availability-dot"></span>
+                Available for opportunities
+            </div>
             <p>I'm a Junior Software Developer based in South Africa, passionate about building things that actually work and look good doing it. I enjoy solving problems, picking up new technologies, and turning ideas into real applications — this site is a bit of that in action.</p>
             <div class="social-media">
                 <a href="https://github.com/CloudyJayC" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
                 <a href="https://www.linkedin.com/in/jason-cameron-69b080352/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
             </div>
-            <a href="assets/documents/Jason Cameron CV.pdf" class="btn" download>Download CV</a>
+            <div class="cv-download">
+                <a href="assets/documents/Jason Cameron CV.pdf" class="btn" download>Download CV</a>
+                <span class="cv-updated">Updated Feb 2026</span>
+            </div>
         </div>
         <div class="home-img">
             <img src="assets/images/Home.png" alt="Jason Cameron" loading="eager">

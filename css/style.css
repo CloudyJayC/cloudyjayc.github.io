@@ -242,6 +242,58 @@ span{
     font-size: 1.6rem;
 }
 
+/* ==================== AVAILABILITY BADGE ==================== */
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 1.5rem 0 0.5rem;
+    padding: 0.6rem 1.4rem;
+    background: rgba(0, 238, 255, 0.08);
+    border: 0.1rem solid rgba(0, 238, 255, 0.3);
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+body.light-mode .availability-badge {
+    background: rgba(0, 119, 255, 0.07);
+    border-color: rgba(0, 119, 255, 0.3);
+}
+
+.availability-dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: var(--main-color);
+    box-shadow: 0 0 6px var(--main-color);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--main-color); }
+    50%       { opacity: 0.5; box-shadow: 0 0 12px var(--main-color); }
+}
+
+/* ==================== CV DOWNLOAD ROW ==================== */
+.cv-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+.cv-updated {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+body.light-mode .cv-updated {
+    color: rgba(0, 0, 0, 0.4);
+}
+
 .social-media a {
     display: inline-flex;
     justify-content: center;
@@ -929,6 +981,12 @@ body.light-mode .contact form textarea {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .cv-download {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
     }
 
     .home-content h3 {

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Jason.dev</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Favicon matching main site -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f242d'/><text x='50' y='58' font-family='Poppins,sans-serif' font-size='42' font-weight='700' fill='%2300eeff' text-anchor='middle'>J</text><text x='72' y='72' font-family='Poppins,sans-serif' font-size='22' font-weight='600' fill='%23ffffff' text-anchor='middle'>.dev</text></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --bg-color: #1f242d;
+            --second-bg-color: #323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-size: clamp(8rem, 20vw, 14rem);
+            font-weight: 700;
+            line-height: 1;
+            color: var(--main-color);
+            text-shadow: 0 0 3rem rgba(0, 238, 255, 0.3),
+                         0 0 6rem rgba(0, 238, 255, 0.15);
+            letter-spacing: -0.5rem;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 3rem rgba(0, 238, 255, 0.3), 0 0 6rem rgba(0, 238, 255, 0.15); }
+            50%       { text-shadow: 0 0 5rem rgba(0, 238, 255, 0.5), 0 0 10rem rgba(0, 238, 255, 0.25); }
+        }
+
+        .error-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .error-desc {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 42rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            font-weight: 600;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 1.5rem var(--main-color);
+        }
+
+        .logo {
+            position: absolute;
+            top: 2.5rem;
+            left: 5%;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .logo span {
+            color: var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="logo">Jason<span>.dev</span></a>
+
+    <p class="error-code">404</p>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">Looks like this page doesn't exist or was moved. Let's get you back on track.</p>
+    <a href="index.html" class="btn">
+        <i class='bx bx-home'></i>
+        Back to Home
+    </a>
+</body>
+</html>
