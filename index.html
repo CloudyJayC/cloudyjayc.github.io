@@ -13,7 +13,13 @@
     <!--header design-->
     <header class="header">
         <a href="#" class="logo">Jason<span class="logo-dev">.dev</span></a>
-        <i class='bx bx-menu' id="menu-icon"></i>
+        <div class="header-icons">
+            <div class="hamburger" id="menu-icon" aria-label="Toggle navigation" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
@@ -31,9 +37,9 @@
             <h3>And I'm a <span class="multiple-text"></span></h3>
             <p>This is a website I developed to display my online portfolio. It includes my skills, information about me, projects I've worked on, and my education and work experience.</p>
             <div class="social-media">
-                <a href="https://www.facebook.com/profile.php?id=100079689372445"><i class='bx bxl-facebook' ></i></a>
-                <a href="https://www.instagram.com/cloudyjayc/"><i class='bx bxl-instagram' ></i></a>
-                <a href="https://www.linkedin.com/in/jason-cameron-69b080352/"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100079689372445" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/cloudyjayc/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/jason-cameron-69b080352/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
             </div>
             <a href="assets/documents/Jason Cameron CV.pdf" class="btn" download="">Download CV</a>
         </div>
@@ -235,7 +241,7 @@
                                                 <span class="tech-tag">AI</span>
                                                 <span class="tech-tag">PDF</span>
                                             </div>
-                                            <a href="https://github.com/CloudyJayC/DocumentScannerAI" target="_blank" title="View on GitHub"><i class='bx bxl-github'></i></a>
+                                            <a href="https://github.com/CloudyJayC/DocumentScannerAI" target="_blank" rel="noopener noreferrer" title="View on GitHub"><i class='bx bxl-github'></i></a>
                                         </div>
                                     </div>
                         <div class="portfolio-box">
@@ -248,7 +254,7 @@
                                     <span class="tech-tag">SQL Server</span>
                                     <span class="tech-tag">Bootstrap 5</span>
                                 </div>
-                                <a href="https://github.com/CloudyJayC/MuncipalityManagementSystem" target="_blank" title="View on GitHub"><i class='bx bxl-github'></i></a>
+                                <a href="https://github.com/CloudyJayC/MuncipalityManagementSystem" target="_blank" rel="noopener noreferrer" title="View on GitHub"><i class='bx bxl-github'></i></a>
                             </div>
                         </div>
             <!-- Projects will be added here -->
@@ -259,12 +265,12 @@
         <h2 class="heading">Contact <span>Me!</span></h2>
         <form action="https://formsubmit.co/jwcameron3@gmail.com" method="POST" onsubmit="return validateForm()" />
             <div class="input-box">
-                <input type="text" placeholder="Full Name" id="name">
-                <input type="email" placeholder="Email Address" id="email">
+                <input type="text" name="name" placeholder="Full Name" id="name">
+                <input type="email" name="email" placeholder="Email Address" id="email">
             </div>
             <div class="input-box">
-                <input type="tel" placeholder="Mobile Number" id="phone">
-                <input type="text" placeholder="Email Subject" id="subject">
+                <input type="tel" name="phone" placeholder="Mobile Number" id="phone">
+                <input type="text" name="subject" placeholder="Email Subject" id="subject">
             </div>
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
             <input type="submit" value="Send Message" class="btn"> 
@@ -292,27 +298,19 @@
                     var sectionId = this.getAttribute("href");
                     var section = document.querySelector(sectionId);
                     if (typeof setScrollLock === 'function') setScrollLock();
-                    window.scrollTo({
-                        top: section.offsetTop,
-                        behavior: "smooth"
-                    });
-                    // Remove active from all, add to clicked
+                    window.scrollTo({ top: section.offsetTop, behavior: "smooth" });
                     tabs.forEach(function(t) { t.classList.remove('active'); });
                     this.classList.add('active');
                 });
             });
 
-            // Fix for 'View Experience' button
             var viewExpBtn = document.querySelector('.about-content .btn[href="#experience"]');
             if(viewExpBtn) {
                 viewExpBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     var expSection = document.querySelector('#experience');
                     if (typeof setScrollLock === 'function') setScrollLock();
-                    window.scrollTo({
-                        top: expSection.offsetTop,
-                        behavior: "smooth"
-                    });
+                    window.scrollTo({ top: expSection.offsetTop, behavior: "smooth" });
                     tabs.forEach(function(t) { t.classList.remove('active'); });
                     document.querySelector('.navbar a[href="#experience"]').classList.add('active');
                 });

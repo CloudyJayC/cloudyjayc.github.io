@@ -66,6 +66,16 @@ section{
     cursor: default;
 }
 
+.logo-dev {
+    color: var(--main-color);
+}
+
+/* Group hamburger + theme toggle so they sit centered together */
+.header-icons {
+    display: none;
+    align-items: center;
+    gap: 1.4rem;
+}
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
@@ -98,10 +108,73 @@ section{
     color: var(--main-color);
 }
 
-#menu-icon {
-    font-size: 3.6rem;
-    color: var(--text-color);
+/* ==================== ANIMATED HAMBURGER ==================== */
+.hamburger {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 3.8rem;
+    height: 3.8rem;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: var(--text-color);
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hover glow — matches site accent */
+.hamburger:hover span {
+    background: var(--main-color);
+    box-shadow: 0 0 8px var(--main-color);
+}
+
+.hamburger:hover {
+    box-shadow: 0 0 12px rgba(0, 238, 255, 0.25);
+}
+
+body.light-mode .hamburger:hover {
+    box-shadow: 0 0 12px rgba(0, 119, 255, 0.2);
+}
+
+/* Open state — morph into X */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+    background: var(--main-color);
+    box-shadow: 0 0 8px var(--main-color);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+    background: var(--main-color);
+    box-shadow: 0 0 8px var(--main-color);
+}
+
+.hamburger.open {
+    box-shadow: 0 0 16px rgba(0, 238, 255, 0.35);
+}
+
+body.light-mode .hamburger.open {
+    box-shadow: 0 0 16px rgba(0, 119, 255, 0.3);
 }
 
 /* ==================== THEME TOGGLE ICON ==================== */
@@ -129,7 +202,7 @@ section{
 }
 
 .home-img img{
-    width: 35vw;
+    width: 30vw;
     animation: floatImage 4s ease-in-out infinite;
 }
 
@@ -212,7 +285,31 @@ span{
 }
 
 .about-img img{
-    width: 35vw; 
+    width: 25vw;
+    border-radius: 2rem 2rem 2rem 2rem;
+    border: 0.2rem solid var(--main-color);
+    box-shadow: 0 0 1.5rem rgba(0, 238, 255, 0.25),
+                0 0 4rem rgba(0, 238, 255, 0.08),
+                inset 0 0 1rem rgba(0, 238, 255, 0.05);
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.about-img img:hover {
+    box-shadow: 0 0 2.5rem rgba(0, 238, 255, 0.4),
+                0 0 6rem rgba(0, 238, 255, 0.15),
+                inset 0 0 1rem rgba(0, 238, 255, 0.08);
+}
+
+body.light-mode .about-img img {
+    box-shadow: 0 0 1.5rem rgba(0, 119, 255, 0.2),
+                0 0 4rem rgba(0, 119, 255, 0.07),
+                inset 0 0 1rem rgba(0, 119, 255, 0.04);
+}
+
+body.light-mode .about-img img:hover {
+    box-shadow: 0 0 2.5rem rgba(0, 119, 255, 0.35),
+                0 0 6rem rgba(0, 119, 255, 0.12),
+                inset 0 0 1rem rgba(0, 119, 255, 0.07);
 }
 
 .heading {
@@ -283,19 +380,6 @@ span{
 }
 
 .skill-tag {
-    /* Portfolio tech tags reuse skill-tag style for consistency */
-    .tech-tag {
-        display: inline-block;
-        background: var(--main-color);
-        color: var(--bg-color);
-        font-size: 1.2rem;
-        font-weight: 500;
-        border-radius: 0.5rem;
-        padding: 0.2rem 0.8rem;
-        margin: 0 0.2rem 0.3rem 0;
-        letter-spacing: 0.5px;
-        transition: background 0.3s, color 0.3s;
-    }
     display: inline-block;
     padding: 0.5rem 1rem;
     background: rgba(0, 238, 255, 0.1);
@@ -772,63 +856,72 @@ body.light-mode .contact form textarea {
     html{
         font-size: 55%;
     }
-
 }
+
 
 @media (max-width: 991px){
     .header {
         padding: 2rem 3%;
     }
-
-    section{
+    section {
         padding: 10rem 3% 2rem;
     }
-
-    .services {
+    .portfolio {
         padding-bottom: 7rem;
     }
-
-    .portfolio{
-        padding-bottom: 7rem;
-    }
-
-    .contact{
+    .contact {
         min-height: auto;
     }
-
-    .footer{
+    .footer {
         padding: 2rem 3%;
     }
 }
 
 @media (max-width: 768px){
-    #menu-icon {
-        display: block;
+    /* Show the icon group, hide desktop nav */
+    .header-icons {
+        display: flex;
     }
 
-    .navbar{
+    /* Move theme toggle to desktop position when navbar is visible */
+    #theme-toggle {
+        font-size: 2.2rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        padding: 1rem 3%;
+        padding: 0 3%;
         background: var(--bg-color);
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        display: none;
+        border-top: .1rem solid rgba(0, 238, 255, 0.15);
+        box-shadow: 0 .8rem 2rem rgba(0, 0, 0, .25);
+        /* Slide animation instead of display snap */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                    padding 0.4s ease,
+                    box-shadow 0.3s ease;
     }
 
     .navbar.active {
-        display: block;
+        max-height: 40rem;
+        padding: 1rem 3% 2rem;
     }
 
-    .navbar a{
+    .navbar a {
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
+        margin: 2rem 0;
+        text-align: center;
     }
 
-    /* Home section — stack vertically, image above text on mobile */
+    /* Home — image on top, text below, centered */
     .home {
         flex-direction: column-reverse;
         min-height: auto;
@@ -856,11 +949,6 @@ body.light-mode .contact form textarea {
         max-width: 90%;
     }
 
-    .social-media {
-        justify-content: center;
-    }
-
-    /* Home image — centered, well-sized, less gap */
     .home-img {
         display: flex;
         justify-content: center;
@@ -871,9 +959,10 @@ body.light-mode .contact form textarea {
     .home-img img {
         width: min(65vw, 28rem);
         margin-top: 0;
+        animation: none;
     }
 
-    /* About section — stack vertically, image below text */
+    /* About — text first, image below */
     .about {
         flex-direction: column;
         min-height: auto;
@@ -894,7 +983,6 @@ body.light-mode .contact form textarea {
         text-align: center;
     }
 
-    /* About image — centered, sized nicely */
     .about-img {
         display: flex;
         justify-content: center;
@@ -906,15 +994,22 @@ body.light-mode .contact form textarea {
         width: min(65vw, 28rem);
     }
 
-    .skills h2{
+    .experience,
+    .skills,
+    .portfolio,
+    .contact {
+        min-height: auto;
+    }
+
+    .skills h2 {
         margin-bottom: 3rem;
     }
-    
+
     .portfolio h2 {
         margin-bottom: 3rem;
     }
 
-    .portfolio-container{
+    .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -948,10 +1043,20 @@ body.light-mode .contact form textarea {
     .tech-tags {
         justify-content: center;
     }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 617px){
-    .portfolio-container{
+    .portfolio-container {
         grid-template-columns: 1fr;
     }
 
@@ -980,18 +1085,14 @@ body.light-mode .contact form textarea {
     .about-img img {
         width: min(75vw, 24rem);
     }
-
-    .contact form .input-box input{
-        width: 100%;
-    }
 }
 
 @media (max-width: 365px){
-    .home-img img{
+    .home-img img {
         width: 85vw;
     }
 
-    .about-img img{
+    .about-img img {
         width: 85vw;
     }
 
