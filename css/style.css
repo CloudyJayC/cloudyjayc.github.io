@@ -66,10 +66,6 @@ section{
     cursor: default;
 }
 
-.logo-dev {
-    color: var(--main-color);
-}
-
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
@@ -809,6 +805,7 @@ body.light-mode .contact form textarea {
     #menu-icon {
         display: block;
     }
+
     .navbar{
         position: absolute;
         top: 100%;
@@ -816,8 +813,8 @@ body.light-mode .contact form textarea {
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
-        border-top: 1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0. .5rem rgba(0, 0, 0, .2);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         display: none;
     }
 
@@ -828,31 +825,85 @@ body.light-mode .contact form textarea {
     .navbar a{
         display: block;
         font-size: 2rem;
-        margin: 3rem 0 ;
+        margin: 3rem 0;
     }
+
+    /* Home section — stack vertically, image above text on mobile */
     .home {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        min-height: auto;
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        text-align: center;
     }
-    .home-content h3{
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-content h3 {
         font-size: 2.6rem;
     }
 
-    .home-content h1{
-        font-size: 5rem;
+    .home-content h1 {
+        font-size: 4.2rem;
     }
 
-    .home-img img{
-        width: 70vw ;
-        margin-top: 4rem;
+    .home-content p {
+        font-size: 1.5rem;
+        max-width: 90%;
     }
 
+    .social-media {
+        justify-content: center;
+    }
+
+    /* Home image — centered, well-sized, less gap */
+    .home-img {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .home-img img {
+        width: min(65vw, 28rem);
+        margin-top: 0;
+    }
+
+    /* About section — stack vertically, image below text */
     .about {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        text-align: center;
     }
 
-    .about-img{
-        width: 70vw;
-        margin-top: 4rem;
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content h2,
+    .about-content h3,
+    .about-content p {
+        text-align: center;
+    }
+
+    /* About image — centered, sized nicely */
+    .about-img {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    .about-img img {
+        width: min(65vw, 28rem);
     }
 
     .skills h2{
@@ -891,11 +942,11 @@ body.light-mode .contact form textarea {
     }
 
     .skill-tags {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .tech-tags {
-        justify-content: flex-start;
+        justify-content: center;
     }
 }
 
@@ -918,6 +969,18 @@ body.light-mode .contact form textarea {
         font-size: 50%;
     }
 
+    .home-content h1 {
+        font-size: 3.8rem;
+    }
+
+    .home-img img {
+        width: min(75vw, 24rem);
+    }
+
+    .about-img img {
+        width: min(75vw, 24rem);
+    }
+
     .contact form .input-box input{
         width: 100%;
     }
@@ -925,10 +988,14 @@ body.light-mode .contact form textarea {
 
 @media (max-width: 365px){
     .home-img img{
-        width: 90vw;
+        width: 85vw;
     }
 
     .about-img img{
-        width: 90vw;
+        width: 85vw;
+    }
+
+    .home-content h1 {
+        font-size: 3.4rem;
     }
 }
