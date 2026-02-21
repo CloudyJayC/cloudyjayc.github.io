@@ -1,6 +1,6 @@
 /*===================== hamburger toggle ===============*/
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
 
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('open');
@@ -16,40 +16,36 @@ menuIcon.addEventListener('keydown', (e) => {
 
 
 /*===================== light/dark mode toggle ===============*/
-const themeToggle = document.createElement('i');
-themeToggle.className = 'bx bx-moon';
-themeToggle.id = 'theme-toggle';
-themeToggle.setAttribute('aria-label', 'Toggle light/dark mode');
-themeToggle.setAttribute('role', 'button');
-themeToggle.setAttribute('tabindex', '0');
-
-// Append to header — on desktop sits inline after navbar, on mobile moves into header-icons
-document.querySelector('.header').appendChild(themeToggle);
-
-// On mobile, move it into the header-icons group so it sits next to the hamburger
-function placeThemeToggle() {
-    const headerIcons = document.querySelector('.header-icons');
-    if (window.innerWidth <= 768) {
-        if (!headerIcons.contains(themeToggle)) {
-            headerIcons.appendChild(themeToggle);
-        }
-    } else {
-        if (!document.querySelector('.header').contains(themeToggle) || headerIcons.contains(themeToggle)) {
-            document.querySelector('.header').appendChild(themeToggle);
-        }
-    }
-}
-
-placeThemeToggle();
-window.addEventListener('resize', placeThemeToggle);
-
+const themeToggle = document.querySelector('#theme-toggle');
 const body = document.body;
 
+// Apply saved theme immediately on load
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'light') {
     body.classList.add('light-mode');
     themeToggle.classList.replace('bx-moon', 'bx-sun');
+    themeToggle.setAttribute('aria-label', 'Switch to dark mode');
 }
+
+// On mobile, move theme toggle into header-icons so it sits next to hamburger
+function placeThemeToggle() {
+    const headerIcons = document.querySelector('.header-icons');
+    const header = document.querySelector('.header');
+    if (window.innerWidth <= 768) {
+        if (!headerIcons.contains(themeToggle)) headerIcons.appendChild(themeToggle);
+    } else {
+        if (headerIcons.contains(themeToggle)) header.appendChild(themeToggle);
+    }
+}
+
+placeThemeToggle();
+
+// Debounced resize listener — avoids firing on every pixel
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(placeThemeToggle, 100);
+});
 
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('light-mode');
@@ -72,8 +68,8 @@ themeToggle.addEventListener('keydown', (e) => {
 
 
 /*================= scroll sections active link ===================*/
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
 
 let scrollLock = false;
 let scrollLockTimer = null;
@@ -87,56 +83,91 @@ function setScrollLock() {
 window.onscroll = () => {
     if (!scrollLock) {
         sections.forEach(sec => {
-            let top = window.scrollY;
-            let offset = sec.offsetTop;
-            let height = sec.offsetHeight;
-            let id = sec.getAttribute('id');
+            const top    = window.scrollY;
+            const offset = sec.offsetTop;
+            const height = sec.offsetHeight;
+            const id     = sec.getAttribute('id');
             if (top >= offset && top < offset + height) {
-                navLinks.forEach(links => {
-                    links.classList.remove('active');
-                    document.querySelector('header nav a[href="#' + id + '"]').classList.add('active');
-                });
+                navLinks.forEach(link => link.classList.remove('active'));
+                const activeLink = document.querySelector(`header nav a[href="#${id}"]`);
+                if (activeLink) activeLink.classList.add('active');
             }
         });
     }
 
-    /*======================= sticky navbar ===========*/
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 100);
+    // Sticky navbar
+    document.querySelector('header').classList.toggle('sticky', window.scrollY > 100);
 
-    /*====================== close menu on scroll ===========*/
+    // Close mobile menu on scroll
     menuIcon.classList.remove('open');
     navbar.classList.remove('active');
 };
+
+
+/*================== smooth nav link scrolling =================*/
+document.addEventListener('DOMContentLoaded', () => {
+    navLinks.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(tab.getAttribute('href'));
+            if (!target) return;
+            setScrollLock();
+            window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+            navLinks.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+        });
+    });
+
+    // "View Experience" button in About section
+    const viewExpBtn = document.querySelector('.about-content .btn[href="#experience"]');
+    if (viewExpBtn) {
+        viewExpBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setScrollLock();
+            window.scrollTo({ top: document.querySelector('#experience').offsetTop, behavior: 'smooth' });
+            navLinks.forEach(t => t.classList.remove('active'));
+            const expLink = document.querySelector('.navbar a[href="#experience"]');
+            if (expLink) expLink.classList.add('active');
+        });
+    }
+});
+
+
+/*================== form validation =================*/
+function validateForm() {
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !phone || !subject || !message) {
+        alert('Please fill in all fields');
+        return false;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+        alert('Please enter a valid email address');
+        return false;
+    }
+    return true;
+}
 
 
 /*================== scroll reveal =================*/
 const isMobile = window.innerWidth <= 768;
 
 if (isMobile) {
-    ScrollReveal({
-        reset: true,
-        distance: '50px',
-        duration: 1200,
-        delay: 150
-    });
-
-    ScrollReveal().reveal('.home-content, .heading', { origin: 'bottom' });
+    ScrollReveal({ reset: true, distance: '50px', duration: 1200, delay: 150 });
+    ScrollReveal().reveal('.home-content, .heading',                                      { origin: 'bottom' });
     ScrollReveal().reveal('.home-img, .skills-container, .portfolio-box, .contact form', { origin: 'bottom' });
-    ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'bottom' });
-    ScrollReveal().reveal('.home-content p, .about-content', { origin: 'bottom' });
+    ScrollReveal().reveal('.home-content h1, .about-img',                                { origin: 'bottom' });
+    ScrollReveal().reveal('.home-content p, .about-content',                             { origin: 'bottom' });
 } else {
-    ScrollReveal({
-        reset: true,
-        distance: '80px',
-        duration: 2000,
-        delay: 200
-    });
-
-    ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+    ScrollReveal({ reset: true, distance: '80px', duration: 2000, delay: 200 });
+    ScrollReveal().reveal('.home-content, .heading',                                      { origin: 'top'    });
     ScrollReveal().reveal('.home-img, .skills-container, .portfolio-box, .contact form', { origin: 'bottom' });
-    ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-    ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+    ScrollReveal().reveal('.home-content h1, .about-img',                                { origin: 'left'   });
+    ScrollReveal().reveal('.home-content p, .about-content',                             { origin: 'right'  });
 }
 
 

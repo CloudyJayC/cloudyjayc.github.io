@@ -33,7 +33,7 @@ html {
 }
 
 body {
-    background: var(--bg-color) ;
+    background: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -799,19 +799,38 @@ body.light-mode .languages-info p {
     margin: .3rem 0 1rem;
 }
 
-.portfolio-layer a{
+.portfolio-github-btn {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    width: 5rem;
-    height: 5rem;
+    gap: 0.7rem;
+    margin-top: 1rem;
+    padding: 0.9rem 2rem;
     background: var(--text-color);
-    border-radius: 50%;
+    color: var(--bg-color);
+    border-radius: 4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
-.portfolio-layer a i{
-    font-size: 2rem;
-    color: var(--second-bg-color);
+.portfolio-github-btn:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.portfolio-github-btn i {
+    font-size: 1.8rem;
+}
+
+body.light-mode .portfolio-github-btn {
+    background: #222;
+    color: #fff;
+}
+
+body.light-mode .portfolio-github-btn:hover {
+    background: var(--main-color);
+    color: #fff;
 }
 
 .contact h2{
