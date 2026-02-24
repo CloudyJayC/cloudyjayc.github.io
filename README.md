@@ -8,7 +8,7 @@ A modern, responsive personal portfolio website showcasing projects, skills, and
 
 ## ✨ Features
 
-- **Responsive Design** — Mobile-first layout that adapts seamlessly to all screen sizes
+- **Responsive Design** — Mobile-first layout that works on all screen sizes
 - **Dark/Light Mode** — Theme toggle with persistent storage
 - **Smooth Navigation** — Active link highlighting and smooth scroll behavior
 - **Professional Portfolio** — Showcase of completed projects with detailed descriptions
@@ -47,7 +47,7 @@ cloudyjayc.github.io/
 - **CSS3** — Modern styling with CSS Grid, Flexbox, and CSS animations
 - **JavaScript (Vanilla)** — No framework dependencies, lightweight and fast
 - **External Libraries:**
-  - [Boxicons](https://boxicons.com/) — Beautiful icon library
+  - [Boxicons](https://boxicons.com/) — Icon library
   - [ScrollReveal](https://scrollrevealjs.org/) — Scroll animations
   - [Typed.js](https://mattboldt.com/typed.js/) — Text animation effect
   - [FormSubmit](https://formsubmit.co/) — Form backend
